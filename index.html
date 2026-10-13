@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090c24">
+<meta name="description" content="Cooper Gurrie's projects turn sports and data into interactive experiences. Explore a play-money fantasy football sportsbook and upcoming basketball models.">
+<link rel="icon" type="image/svg+xml" href="assets/cooper-favicon.svg">
+<link rel="preload" href="assets/fonts/Barlow-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cooper Gurrie — Projects">
+<meta property="og:description" content="Sports, data, and whatever comes next.">
+<meta property="og:url" content="https://coopergurrie.com/">
+<meta property="og:image" content="https://coopergurrie.com/assets/cooper-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cooper Gurrie: Sportsbook, college basketball model, and NBA model.">
+<meta name="twitter:card" content="summary_large_image">
+<title>Cooper Gurrie — Projects</title>
+<style>
+@font-face{font-family:Barlow;src:url('assets/fonts/Barlow-SemiBold.ttf') format('truetype');font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:Manrope;src:url('assets/fonts/Manrope-Variable.ttf') format('truetype');font-style:normal;font-weight:200 800;font-display:swap}
+:root{color-scheme:dark;--bg:#090c24;--text:#fafaff;--muted:#b5bad2;--yellow:#ffd229;--blue:#619fff;--red:#ff5869}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased;isolation:isolate}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 85% 5%,#22397855,transparent 46%),radial-gradient(ellipse at 4% 89%,#23334a66,transparent 44%)}
+.background{position:fixed;inset:-24px;width:calc(100% + 48px);height:calc(100% + 48px);z-index:-1;pointer-events:none;opacity:.65;transform:translate(var(--bg-x,0px),var(--bg-y,0px));transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.orbit-lines{transform-origin:center;animation:orbit-drift 28s ease-in-out infinite alternate}
+@keyframes orbit-drift{from{transform:rotate(-1deg)}to{transform:rotate(2deg)}}
+@keyframes intro-enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.intro{animation:intro-enter .7s ease-out both}
+.page{max-width:1340px;margin:auto;min-height:100svh;padding:76px 56px 32px}
+.intro{text-align:center}h1{font-family:Barlow,"Segoe UI",sans-serif;font-size:clamp(46px,7.2vw,102px);line-height:1.05;letter-spacing:1px;margin:22px 0 25px;font-weight:600}
+.intro p{font-size:18px;line-height:1.65;color:var(--muted);max-width:660px;margin:0 auto}
+.socials{display:flex;justify-content:center;gap:20px;margin-top:26px}.social{position:relative;display:grid;place-items:center;width:44px;height:44px;outline:none;border-radius:12px;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .25s,color .25s;color:#c9cae0}
+.social svg{width:24px;height:24px;fill:currentColor}.social:hover,.social:focus-visible{transform:translateY(-6px) rotate(-7deg) scale(1.12);color:white;background:#20204b}.social:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.social::after{content:attr(data-label);position:absolute;top:52px;font-size:11px;white-space:nowrap;color:var(--muted);opacity:0;transform:translateY(-4px);transition:.2s;pointer-events:none}.social:hover::after,.social:focus-visible::after{opacity:1;transform:translateY(0)}
+.projects{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:38px;margin:74px 0 68px;perspective:1200px}
+.projects > .project{grid-column:span 2}
+.projects > .placeholder{min-height:280px}
+.projects > .placeholder h2{margin:0 0 35px}
+.projects > .placeholder.ocho{grid-column:2 / span 2;--accent:#bd8cff;--rgb:189,140,255}
+.projects > .placeholder.instagram{grid-column:4 / span 2;--accent:#65dba0;--rgb:101,219,160}
+.project{--accent:var(--yellow);--rgb:255,210,41;--rx:0deg;--ry:0deg;--px:50%;--py:50%;position:relative;isolation:isolate;display:flex;flex-direction:column;min-height:340px;padding:34px 30px 30px;border:2px solid var(--accent);border-radius:32px;outline:none;background:var(--bg);transform:translateY(0) rotateX(0deg) rotateY(0deg);transition:transform .45s cubic-bezier(.2,.75,.2,1),box-shadow .4s;will-change:transform;overflow:hidden}
+.project.blue{--accent:var(--blue);--rgb:97,159,255}.project.red{--accent:var(--red);--rgb:255,88,105}
+.project::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(circle at var(--px) var(--py),rgba(var(--rgb),.17),transparent 65%);opacity:0;transition:opacity .4s}
+.project:hover,.project:focus-visible,.project:focus-within{transform:translateY(-12px) rotateX(var(--rx)) rotateY(var(--ry));box-shadow:0 22px 45px #00000038,0 0 32px rgba(var(--rgb),.12)}
+.project:hover::before,.project:focus-visible::before,.project:focus-within::before{opacity:1}.project:focus-visible{outline:2px solid white;outline-offset:6px}
+.project h2{font-family:Barlow,"Segoe UI",sans-serif;font-weight:600;font-size:26px;line-height:1.15;letter-spacing:-.3px;margin:0 0 19px}
+.description{font-size:16px;line-height:1.65;color:var(--muted);margin:0 0 28px;max-width:290px}
+.project h2,.description,.bottom{transition:transform .4s cubic-bezier(.2,.8,.2,1)}.project:hover h2{transform:translateY(-3px)}.project:hover .description{transform:translateY(-2px);transition-delay:.04s}
+.bottom{margin-top:auto}.status{font-size:12px;color:var(--muted);margin:0 0 13px;display:flex;align-items:center;gap:8px}.status::before{content:"";width:6px;height:6px;flex-shrink:0;background:var(--accent);border-radius:50%}
+.button{font:600 14px Manrope,"Segoe UI",Arial,sans-serif;display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:12px 16px;border:1px solid var(--accent);border-radius:10px;text-decoration:none;transition:transform .22s,background .22s,box-shadow .22s;color:#171525;background:var(--accent)}
+.button.live:hover{transform:translateY(-3px);background:#ffdf60;box-shadow:0 8px 22px #ffd22930}.button.live:active{transform:translateY(1px) scale(.98)}.button:focus-visible{outline:2px solid white;outline-offset:5px}
+.blue .button.live{background:var(--blue);color:#091429}.blue .button.live:hover{background:#8ab9ff;box-shadow:0 8px 22px #619fff30}
+.button:disabled{cursor:default;background:rgba(var(--rgb),.08);color:var(--accent);border-color:rgba(var(--rgb),.35)}
+footer{display:flex;justify-content:space-between;gap:20px;color:#8d8ea9;font-size:12px;line-height:1.5}footer p{margin:0}
+.about{margin:14px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
+.about summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;list-style:none;cursor:pointer;color:var(--text);font-size:13px}
+.about summary::-webkit-details-marker{display:none}.about summary::after{content:"+";font-size:20px;color:var(--accent);transition:transform .25s}
+.about[open] summary::after{transform:rotate(45deg)}.about summary:hover{color:var(--accent)}.about summary:focus-visible{outline:2px solid white;outline-offset:5px;border-radius:3px}
+.about p{margin:8px 0 0}.about[open] p{animation:intro-enter .25s ease-out both}
+.about ul{padding-left:18px;margin:13px 0}.about li{margin:7px 0}.about strong{color:var(--text);font-weight:600}
+.personal.about{--accent:var(--blue);max-width:660px;margin:26px auto 0}
+.personal summary{justify-content:center;gap:15px}
+.intro .personal p{font-size:15px;text-align:left;line-height:1.8;margin:13px 0}
+@media(max-width:1000px){.page{padding:50px 30px 30px}.projects{gap:20px}.project{padding:26px 22px;border-radius:26px}.project h2{font-size:23px}.description{font-size:15px}h1{letter-spacing:-2.5px}}
+@media(max-width:740px){.page{padding:38px 24px 26px}h1{font-size:clamp(40px,10vw,68px);letter-spacing:-2px;margin:20px 0}.intro p{font-size:16px;max-width:420px}.projects{grid-template-columns:1fr;gap:25px;margin:56px auto 46px;max-width:440px}.projects > .project,.projects > .placeholder.ocho,.projects > .placeholder.instagram{grid-column:1}.project{min-height:288px;padding:28px;border-radius:28px}.project h2{font-size:25px}.description{max-width:none;font-size:16px}footer{font-size:11px}.socials{margin-top:22px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}.project:hover,.project:focus-visible,.project:focus-within,.project:hover h2,.project:hover .description,.social:hover,.social:focus-visible,.button.live:hover,.button.live:active{transform:none!important}}
+@media(prefers-reduced-motion:reduce){.background{transform:none!important}}
+</style>
+</head>
+<body>
+<svg class="background" viewBox="0 0 1440 960" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<g class="orbit-lines" fill="none" stroke="#7585bd" stroke-width="1" opacity=".21">
+<ellipse cx="1335" cy="105" rx="350" ry="275" transform="rotate(-30 1335 105)"/>
+<ellipse cx="1335" cy="105" rx="410" ry="322" transform="rotate(-30 1335 105)"/>
+<ellipse cx="1335" cy="105" rx="470" ry="369" transform="rotate(-30 1335 105)"/>
+<ellipse cx="1335" cy="105" rx="530" ry="416" transform="rotate(-30 1335 105)"/>
+<ellipse cx="-40" cy="1030" rx="340" ry="260" transform="rotate(-30 -40 1030)"/>
+<ellipse cx="-40" cy="1030" rx="405" ry="310" transform="rotate(-30 -40 1030)"/>
+<ellipse cx="-40" cy="1030" rx="470" ry="360" transform="rotate(-30 -40 1030)"/>
+</g>
+<g fill="#a6b4dd" opacity=".3"><circle cx="80" cy="114" r="1.5"/><circle cx="167" cy="267" r="1"/><circle cx="450" cy="69" r="1"/><circle cx="820" cy="352" r="1.2"/><circle cx="1274" cy="325" r="1.5"/><circle cx="1393" cy="565" r="1"/><circle cx="987" cy="847" r="1.3"/><circle cx="580" cy="890" r="1"/><circle cx="66" cy="646" r="1.3"/></g>
+<g fill="#619fff" opacity=".5"><circle cx="1200" cy="272" r="3"/><circle cx="177" cy="830" r="2.5"/></g>
+</svg>
+<div class="page">
+<header class="intro">
+<h1>COOPER GURRIE</h1>
+<p>A home for my projects, turning sports and data into interactive experiences to share with others.</p>
+<div class="socials" aria-label="LinkedIn and email — links will be added later">
+<span class="social" tabindex="0" role="img" aria-label="LinkedIn — link to be added" data-label="LinkedIn">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6ZM8 19H5V9h3v10ZM6.5 7.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4ZM19 19h-3v-5.3c0-1.3-.5-2.1-1.6-2.1-1.2 0-1.9.8-1.9 2.1V19h-3V9h2.9v1.4c.5-.8 1.5-1.7 3-1.7 2.5 0 3.6 1.5 3.6 4.4V19Z"/></svg>
+</span>
+<span class="social" tabindex="0" role="img" aria-label="Email — address to be added" data-label="Email">
+<svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+</span>
+</div>
+<details class="about personal"><summary>A little about me</summary><p>Family, friends, and sports are a big part of my life. I love watching, playing, and talking about sports, and turning data that might otherwise sit in a spreadsheet into something people can interact with and enjoy.</p><p>I started these projects to see how far curiosity, passion, and perseverance could take me. Building something I can call my own is rewarding. Sharing it with others is the best part. The topics may change, but making data enjoyable and useful will always be the focus.</p></details>
+</header>
+<main class="projects" aria-label="Projects">
+<article class="project" tabindex="0" aria-labelledby="sportsbook-title">
+<h2 id="sportsbook-title">Sportsbook</h2>
+<p class="description">A play-money sportsbook for my fantasy football dynasty league. Bet on matchups, player performances, and season outcomes, then see how you stack up against your leaguemates.</p>
+<div class="bottom"><p class="status">Live for select users</p><a class="button live" href="https://sportsbook.coopergurrie.com">Open sportsbook</a></div>
+<details class="about"><summary>About this project</summary><p>I built this to give my dynasty league another way to compete and spend time together, using play money so nobody has to risk losing real money to join in.</p><ul><li><strong>Matchup bets:</strong> predict winners, total scores, and winning margins.</li><li><strong>Player bets:</strong> predict individual fantasy performances.</li><li><strong>Weekly predictions:</strong> bet on outcomes across the league.</li><li><strong>Season futures:</strong> predict the champion, No. 1 pick, and playoff teams.</li><li><strong>League activity:</strong> view your bets, everyone else's bets, and the season leaderboard.</li></ul><p>Today it's built for one league. Longer term, I'd like to bring that extra layer of competition and interaction to other fantasy leagues.</p></details>
+</article>
+<article class="project blue" tabindex="0" aria-labelledby="cbb-title">
+<h2 id="cbb-title">NCAAB Prediction Model</h2>
+<p class="description">A live Division I college basketball model focused on finding potential edges in sportsbook lines. Explore the current model as I continue to develop and refine it.</p>
+<div class="bottom"><p class="status">Live</p><a class="button live" href="https://cbb.coopergurrie.com">Access Model</a></div>
+<details class="about"><summary>About this project</summary><p>Built around current and historical Division I team data, with an initial focus on spreads.</p><p>The project aims to bring matchup information, model projections, and sportsbook comparisons together, with a history of recommendations and results to help evaluate the model.</p><p>The college basketball site is live, and I'll continue expanding its features.</p></details>
+</article>
+<article class="project red" tabindex="0" aria-labelledby="nba-title">
+<h2 id="nba-title">NBA model</h2>
+<p class="description">An NBA model designed to find potential edges in sportsbook lines, starting with spreads. Explore daily matchup recommendations and compare odds once it launches.</p>
+<div class="bottom"><p class="status">In development</p><button class="button" disabled>Coming soon</button></div>
+<details class="about"><summary>About this project</summary><p>The NBA counterpart to my college basketball model, built around current and historical NBA data. It will start with spreads, with winners and totals also planned.</p><p><strong>Planned features</strong></p><ul><li>Daily game recommendations with matchup information.</li><li>Compare model projections with lines from major sportsbooks.</li><li>Highlight the best available odds among the books compared for a recommended bet.</li><li>Keep a history of recommendations and their results to evaluate and refine the model.</li></ul><p>The model and its website are both in development.</p></details>
+</article>
+<article class="project placeholder ocho" tabindex="0" aria-labelledby="ocho-title"><h2 id="ocho-title">THE OCHO</h2><div class="bottom"><p class="status">In development</p><button class="button" disabled>Coming soon</button></div></article>
+<article class="project placeholder instagram" tabindex="0" aria-labelledby="auto-ig-title"><h2 id="auto-ig-title">Auto IG Posts</h2><div class="bottom"><p class="status">In development</p><button class="button" disabled>Coming soon</button></div></article>
+</main>
+<footer><p>coopergurrie.com</p><p>More projects as they take shape.</p></footer>
+</div>
+<script>
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
+let backgroundFrame=0;
+document.addEventListener('pointermove',event=>{
+ if(reduceMotion.matches||event.pointerType==='touch')return;
+ cancelAnimationFrame(backgroundFrame);
+ backgroundFrame=requestAnimationFrame(()=>{
+  document.documentElement.style.setProperty('--bg-x',((event.clientX/innerWidth-.5)*22)+'px');
+  document.documentElement.style.setProperty('--bg-y',((event.clientY/innerHeight-.5)*16)+'px');
+ });
+});
+document.documentElement.addEventListener('pointerleave',()=>{
+ cancelAnimationFrame(backgroundFrame);
+ document.documentElement.style.setProperty('--bg-x','0px');
+ document.documentElement.style.setProperty('--bg-y','0px');
+});
+for(const panel of document.querySelectorAll('.project')){
+ panel.addEventListener('pointermove',event=>{
+  if(reduceMotion.matches||event.pointerType==='touch')return;
+  const box=panel.getBoundingClientRect();
+  const x=Math.max(0,Math.min(1,(event.clientX-box.left)/box.width));
+  const y=Math.max(0,Math.min(1,(event.clientY-box.top)/box.height));
+  panel.style.setProperty('--rx',((.5-y)*8)+'deg');
+  panel.style.setProperty('--ry',((x-.5)*10)+'deg');
+  panel.style.setProperty('--px',(x*100)+'%');
+  panel.style.setProperty('--py',(y*100)+'%');
+ });
+ panel.addEventListener('pointerleave',()=>{
+  panel.style.setProperty('--rx','0deg');panel.style.setProperty('--ry','0deg');
+ });
+}
+</script>
+</body>
+</html>
