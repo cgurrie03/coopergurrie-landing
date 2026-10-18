@@ -1,18 +1,18 @@
 # Portfolio correction review
 
-Prepared October 18, 2026. Portfolio scope only. Auto Instagram Posts has been removed at the owner's request. The Ocho is queued for separate development; its purpose has not been invented.
+Prepared October 18, 2026. See [the latest re-audit](reaudit.md) for subsequent naming, contact and accessibility changes. Portfolio scope only. Auto Instagram Posts has been removed at the owner's request. The Ocho is queued for separate development; its purpose has not been invented.
 
 ## Audit status
 
 | ID | Status | Resolution and evidence |
 | --- | --- | --- |
-| P01 | Fixed | Removed inert LinkedIn/email spans. No confirmed profile URL or contact address exists in the repository. Keyboard flow has no placeholder stops; supplying contacts later is optional. |
+| P01 | Fixed | Replaced the original inert spans with native LinkedIn/email anchors using the owner-confirmed profile and address supplied during the latest re-audit. Mouse and Enter activation pass. |
 | P02 | Fixed | Auto Instagram Posts removed entirely. The Ocho and NBA Model use the same card format as published projects, with disabled “In development” buttons, as requested in the design revision. The Ocho has explicit scope pending; NBA has a sourced planned purpose. |
 | P03 | Fixed | Two published cards lead a uniform four-card grid; The Ocho and NBA follow in matching cards. The redundant project heading, navigation row and hero jump action were removed at the owner’s request. The second published heading is visible in the initial 390 × 844 viewport. |
-| P04 | Fixed | College Basketball Research is labeled a public research preview; its disclosure states that no validated betting edge is established. Sportsbook access distinguishes the public demo from approved league membership. |
-| P05 | Fixed | First card begins around y=172 at 390px and y=224 at 1440px. All four closed cards share dimensions at each breakpoint. Biography follows project content. Browser screenshots cover 320, 390, 768, 1366 × 768, and 1440px layouts. |
+| P04 | Fixed | NCAAB Betting Model is labeled a public preview; its disclosure states that no validated betting edge is established. Sportsbook access distinguishes the public demo from approved league membership. |
+| P05 | Fixed | After restoring contact links, the first card begins around y=226 at 390px and y=278 at 1440px. All four closed cards share dimensions at each breakpoint. Biography follows project content. Browser screenshots cover 320, 390, 768, 1366 × 768, and 1440px layouts. |
 | P06 | Fixed | Native disclosures contain two public screenshots and concise case studies covering audience, contribution, design, behavior and limits. The sportsbook screenshot contains synthetic data only. Working demo and historical performance links are enabled. |
-| P07 | Fixed | Names match the live applications: Fantasy Sportsbook and College Basketball Research. Action labels identify the demo, sign-in, research, and historical winner performance destinations. |
+| P07 | Fixed | Owner-requested portfolio names are Fantasy Sportsbook and NCAAB Betting Model. Actions are Enter the Sportsbook and Open the NCAAB Model. Demo/performance links are inside disclosures. The basketball destination still has its prior title; see re-audit scope notes. |
 | P08 | Fixed | First keyboard stop is a visible-on-focus skip link. Enter moves focus to the projects main landmark; the next Tab reaches the first project’s demo link. |
 | P09 | Fixed | Intro states the maker's focus; project disclosures retain contribution context and case studies. Personal biography remains available in a native disclosure below the work. No fabricated release dates or technology claims. |
 | P10 | Fixed | Normal/social descriptions agree with project status. New 1200 × 630 social image uses current project names and preview labels. Canonical URL added. The existing production social URL responds 200; new local assets respond 200 through the test server. |
@@ -39,7 +39,7 @@ python -m playwright install chromium
 python -m unittest discover -s tests -v
 ```
 
-Set `BROWSER_CHANNEL=msedge` to use an installed Edge browser. All five browser regression tests passed in Edge: native skip/disclosure behavior; mouse and Enter navigation; narrow and expanded layouts; media and metadata; reduced motion. Navigation tests intercept outbound destinations to avoid app mutations. Separate public browser checks verified real routes and read-only demo tabs.
+Set `BROWSER_CHANNEL=msedge` to use an installed Edge browser. All seven browser regression tests passed in Edge, including contact activation and text-spacing checks, plus: native skip/disclosure behavior; mouse and Enter navigation; narrow and expanded layouts; media and metadata; reduced motion. Navigation tests intercept outbound destinations to avoid app mutations. Separate public browser checks verified real routes and read-only demo tabs.
 
 Additional visual checks: 320/390/768/1440px, short 1366 × 768 laptop, expanded case studies, and 200% CSS zoom. No horizontal overflow in closed or expanded states. The scan found no WCAG A/AA violations; automated contrast analysis had an incomplete result for screenshot content, so the scan is not a blanket accessibility certification. Text and controls were visually reviewed. Native browser-menu zoom, screen-reader speech output, iOS Safari and Android Chrome were not exercised.
 
@@ -49,14 +49,14 @@ The production portfolio remains unchanged until a separate authorized deploymen
 
 | Destination | Current verified route | Portfolio label |
 | --- | --- | --- |
-| Public sportsbook demo | `https://sportsbook.coopergurrie.com/#/demo` | Explore the sportsbook demo |
-| Private league access | `https://sportsbook.coopergurrie.com/` | League member sign-in |
-| Basketball entry | `https://cbb.coopergurrie.com/` | Explore basketball research |
-| Historical spread comparison | `https://cbb.coopergurrie.com/#spreads` | Compare historical spread research |
+| Public sportsbook demo | `https://sportsbook.coopergurrie.com/#/demo` | Try the public demo |
+| Private league access | `https://sportsbook.coopergurrie.com/` | Enter the Sportsbook |
+| Basketball entry | `https://cbb.coopergurrie.com/` | Open the NCAAB Model |
+| Historical spread comparison | `https://cbb.coopergurrie.com/#spreads` | Compare historical spread models |
 | Historical winner performance | `https://cbb.coopergurrie.com/#performance` | Explore historical winner performance |
 | Return to portfolio | `https://coopergurrie.com/` | Back to portfolio |
 
-Both applications already show a return link to the portfolio. Preserve these routes or provide redirects when their navigation changes. Suggested identity strings are the current application names above, with Cooper Gurrie as the portfolio owner. No messages were sent to other chats; direct owner coordination is still needed to promise long-term route stability or obtain bespoke media. A stable individual-game deep link has not been confirmed and is not invented here. The verified historical comparison and performance destinations work independently of that future link.
+Both applications already show a return link to the portfolio. Preserve these routes or provide redirects when their navigation changes. Portfolio identity uses the owner-requested NCAAB Betting Model name; the destination app still uses its prior title. Cooper Gurrie is the portfolio owner. No messages were sent to other chats; direct owner coordination is still needed to promise long-term route stability or obtain bespoke media. A stable individual-game deep link has not been confirmed and is not invented here. The verified historical comparison and performance destinations work independently of that future link.
 
 ## Scoped feature proposals
 
@@ -74,7 +74,6 @@ The minimal integration is implemented with verified spread/performance routes a
 
 ## Remaining information
 
-- Confirmed LinkedIn URL and contact email, only if the owner wants those links restored.
 - The Ocho's audience, intended task, benefit, and initial scope before its project development begins.
 - Owner-backed individual historical-game URL and long-term route/media contracts for the optional tour extensions above.
 

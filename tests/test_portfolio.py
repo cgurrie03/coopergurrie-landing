@@ -50,7 +50,7 @@ class PortfolioTests(unittest.TestCase):
         page.keyboard.press('Enter')
         self.assertEqual(page.locator(':focus').get_attribute('id'), 'projects')
         page.keyboard.press('Tab')
-        self.assertEqual(page.locator(':focus').inner_text(), 'Explore the sportsbook demo')
+        self.assertEqual(page.locator(':focus').inner_text(), 'Enter the Sportsbook')
         for summary in page.locator('summary').all():
             summary.focus()
             page.keyboard.press('Enter')
@@ -62,9 +62,9 @@ class PortfolioTests(unittest.TestCase):
     def test_real_links_activate_with_mouse_and_enter(self):
         page = self.page
         destinations = {
-            'Explore the sportsbook demo': 'https://sportsbook.coopergurrie.com/#/demo',
-            'League member sign-in': 'https://sportsbook.coopergurrie.com/',
-            'Explore basketball research': 'https://cbb.coopergurrie.com/',
+            'Enter the Sportsbook': 'https://sportsbook.coopergurrie.com/',
+            'Try the public demo': 'https://sportsbook.coopergurrie.com/#/demo',
+            'Open the NCAAB Model': 'https://cbb.coopergurrie.com/',
             'Explore historical winner performance': 'https://cbb.coopergurrie.com/#performance',
         }
         # Intercept destinations so this regression test stays offline and read-only.
@@ -121,6 +121,40 @@ class PortfolioTests(unittest.TestCase):
         self.assertEqual(panel.evaluate('(el)=>getComputedStyle(el).transform'), 'none')
         self.assertEqual(page.locator('.orbit-lines').evaluate('(el)=>getComputedStyle(el).animationName'), 'none')
         self.assertEqual(page.locator('.background').evaluate('(el)=>getComputedStyle(el).transform'), 'none')
+
+    def test_contacts_are_real_keyboard_and_mouse_links(self):
+        page = self.page
+        page.route('https://www.linkedin.com/**', lambda route: route.fulfill(body='<title>LinkedIn destination</title>', content_type='text/html'))
+        for action in ['mouse', 'keyboard']:
+            page.goto(self.url)
+            linkedin = page.get_by_role('link', name='Cooper Gurrie on LinkedIn', exact=True)
+            if action == 'mouse':
+                linkedin.click()
+            else:
+                linkedin.focus()
+                page.keyboard.press('Enter')
+            page.wait_for_url('https://www.linkedin.com/in/coopergurrie/')
+            page.goto(self.url)
+            email = page.get_by_role('link', name='Email Cooper Gurrie', exact=True)
+            self.assertEqual(email.get_attribute('href'), 'mailto:cooper.gurrie@gmail.com')
+            # Verify native activation without opening a mail client or sending mail.
+            email.evaluate('''el=>el.addEventListener('click', e=>{e.preventDefault();el.dataset.activated='yes'})''')
+            if action == 'mouse':
+                email.click()
+            else:
+                email.focus()
+                page.keyboard.press('Enter')
+            self.assertEqual(email.get_attribute('data-activated'), 'yes')
+
+    def test_text_spacing_does_not_clip_card_content(self):
+        page = self.page
+        page.add_style_tag(content='*{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important}p{margin-bottom:2em!important}')
+        for width in [320,1440]:
+            page.set_viewport_size({'width':width,'height':900})
+            for expanded in [False,True]:
+                page.locator('details').evaluate_all('(els,open)=>els.forEach(el=>el.open=open)', expanded)
+                self.assertLessEqual(page.evaluate('document.documentElement.scrollWidth'), width)
+                self.assertFalse(page.locator('.project').evaluate_all('(els)=>els.some(el=>el.scrollHeight>el.clientHeight+1)'))
 
 
 if __name__ == '__main__':
