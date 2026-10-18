@@ -7,17 +7,17 @@ Prepared October 18, 2026. Portfolio scope only. Auto Instagram Posts has been r
 | ID | Status | Resolution and evidence |
 | --- | --- | --- |
 | P01 | Fixed | Removed inert LinkedIn/email spans. No confirmed profile URL or contact address exists in the repository. Keyboard flow has no placeholder stops; supplying contacts later is optional. |
-| P02 | Fixed | Auto Instagram Posts removed entirely. The Ocho moved to a compact ideas section with explicit scope pending. NBA Model has a sourced, planned purpose and no disabled launch control. |
-| P03 | Fixed | Two public projects lead; unpublished ideas follow. Both projects have navigation links above the first card, and the second heading enters the initial 390 × 844 viewport. |
-| P04 | Fixed | College Basketball Research is labeled a public research preview with no validated betting edge. Sportsbook access distinguishes the public demo from approved league membership. |
-| P05 | Fixed | First card begins around y=299 at 390px and y=351 at 1440px. Biography follows project content. Browser screenshots cover 320, 390, 768, 1366 × 768, and 1440px layouts. |
+| P02 | Fixed | Auto Instagram Posts removed entirely. The Ocho and NBA Model use the same card format as published projects, with disabled “In development” buttons, as requested in the design revision. The Ocho has explicit scope pending; NBA has a sourced planned purpose. |
+| P03 | Fixed | Two published cards lead a uniform four-card grid; The Ocho and NBA follow in matching cards. The redundant project heading, navigation row and hero jump action were removed at the owner’s request. The second published heading is visible in the initial 390 × 844 viewport. |
+| P04 | Fixed | College Basketball Research is labeled a public research preview; its disclosure states that no validated betting edge is established. Sportsbook access distinguishes the public demo from approved league membership. |
+| P05 | Fixed | First card begins around y=172 at 390px and y=224 at 1440px. All four closed cards share dimensions at each breakpoint. Biography follows project content. Browser screenshots cover 320, 390, 768, 1366 × 768, and 1440px layouts. |
 | P06 | Fixed | Native disclosures contain two public screenshots and concise case studies covering audience, contribution, design, behavior and limits. The sportsbook screenshot contains synthetic data only. Working demo and historical performance links are enabled. |
 | P07 | Fixed | Names match the live applications: Fantasy Sportsbook and College Basketball Research. Action labels identify the demo, sign-in, research, and historical winner performance destinations. |
-| P08 | Fixed | First keyboard stop is a visible-on-focus skip link. Enter moves focus to the projects main landmark; the next Tab reaches project navigation. |
-| P09 | Fixed | Intro states the maker's focus; project cards include contribution context and case studies. Personal biography remains available in a native disclosure below the work. No fabricated release dates or technology claims. |
+| P08 | Fixed | First keyboard stop is a visible-on-focus skip link. Enter moves focus to the projects main landmark; the next Tab reaches the first project’s demo link. |
+| P09 | Fixed | Intro states the maker's focus; project disclosures retain contribution context and case studies. Personal biography remains available in a native disclosure below the work. No fabricated release dates or technology claims. |
 | P10 | Fixed | Normal/social descriptions agree with project status. New 1200 × 630 social image uses current project names and preview labels. Canonical URL added. The existing production social URL responds 200; new local assets respond 200 through the test server. |
 
-All original observations were checked against the current repository, not assumed from the audit. No complete audit item was already resolved in the portfolio. The external demo and basketball research views already existed and were verified before linking them.
+All original observations were checked against the current repository, not assumed from the audit. The original audit was evaluated before implementing the corrections. The owner’s later request for matching cards and development buttons supersedes the original recommendation to demote upcoming work to a compact list. The external demo and basketball research views already existed and were verified before linking them.
 
 ## Source and media provenance
 
@@ -77,3 +77,7 @@ The minimal integration is implemented with verified spread/performance routes a
 - Confirmed LinkedIn URL and contact email, only if the owner wants those links restored.
 - The Ocho's audience, intended task, benefit, and initial scope before its project development begins.
 - Owner-backed individual historical-game URL and long-term route/media contracts for the optional tour extensions above.
+
+## Owner-directed design revision
+
+The revised page uses one four-card grid with equal closed card dimensions, padding, borders and button positions at each breakpoint. Yellow/blue identify published work; purple/red identify The Ocho and NBA. Secondary destinations and case studies remain inside native disclosures. Opening a disclosure allows that card to grow to fit its content. Development buttons are intentionally disabled and excluded from the keyboard tab order. The redundant “Explore the projects” heading, navigation row, hero action and “Ideas in progress” section have been removed. Five browser checks pass after updating navigation expectations; responsive screenshots cover the new layout.

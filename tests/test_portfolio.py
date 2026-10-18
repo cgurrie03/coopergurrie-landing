@@ -50,14 +50,14 @@ class PortfolioTests(unittest.TestCase):
         page.keyboard.press('Enter')
         self.assertEqual(page.locator(':focus').get_attribute('id'), 'projects')
         page.keyboard.press('Tab')
-        self.assertEqual(page.locator(':focus').inner_text(), 'Fantasy Sportsbook')
+        self.assertEqual(page.locator(':focus').inner_text(), 'Explore the sportsbook demo')
         for summary in page.locator('summary').all():
             summary.focus()
             page.keyboard.press('Enter')
             self.assertTrue(summary.locator('..').evaluate('(el)=>el.open'))
             page.keyboard.press('Space')
             self.assertFalse(summary.locator('..').evaluate('(el)=>el.open'))
-        self.assertEqual(page.locator('[tabindex="0"], button:disabled, .social').count(), 0)
+        self.assertEqual(page.locator('[tabindex="0"], .social').count(), 0)
 
     def test_real_links_activate_with_mouse_and_enter(self):
         page = self.page
@@ -72,6 +72,7 @@ class PortfolioTests(unittest.TestCase):
         for label, target in destinations.items():
             for action in ['mouse', 'keyboard']:
                 page.goto(self.url)
+                page.locator('article details').evaluate_all('(els)=>els.forEach(el=>el.open=true)')
                 link = page.get_by_role('link', name=label, exact=True)
                 if action == 'mouse':
                     link.click()
@@ -93,7 +94,7 @@ class PortfolioTests(unittest.TestCase):
                     self.assertLessEqual(heading.evaluate('(el)=>el.scrollWidth'), heading.evaluate('(el)=>el.clientWidth'))
         page.set_viewport_size({'width':390,'height':844})
         page.locator('details').evaluate_all('(els)=>els.forEach(el=>el.open=false)')
-        self.assertLess(page.locator('.project-index').bounding_box()['y'], 320)
+        self.assertLess(page.locator('.projects').bounding_box()['y'], 320)
         self.assertLess(page.locator('#basketball').bounding_box()['y'], 844)
 
     def test_media_loads_and_metadata_agrees(self):
