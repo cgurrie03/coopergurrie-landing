@@ -99,17 +99,9 @@ class PortfolioTests(unittest.TestCase):
 
     def test_media_loads_and_metadata_agrees(self):
         page = self.page
-        page.locator('article details').evaluate_all('(els)=>els.forEach(el=>el.open=true)')
-        for img in page.locator('article img').all():
-            img.scroll_into_view_if_needed()
-            page.wait_for_function('(src)=>{const img=document.querySelector(`img[src="${src}"]`);return img.complete && img.naturalWidth>0}', arg=img.get_attribute('src'))
-            self.assertEqual(img.evaluate('(el)=>el.naturalWidth'), 1280)
-            self.assertTrue(img.get_attribute('alt'))
-            self.assertEqual(img.get_attribute('width'), '1280')
-            self.assertEqual(img.get_attribute('height'), '900')
         self.assertEqual(page.locator('meta[name="description"]').get_attribute('content'), page.locator('meta[property="og:description"]').get_attribute('content'))
         self.assertNotIn('Auto IG', page.content())
-        for asset in ['assets/cooper-share.png','assets/cooper-favicon.svg','assets/sportsbook-demo.webp','assets/basketball-research.webp']:
+        for asset in ['assets/cooper-share.png','assets/cooper-favicon.svg','assets/fonts/Barlow-SemiBold.ttf','assets/fonts/Manrope-Variable.ttf']:
             self.assertEqual(page.request.get(self.url + asset).status, 200)
         self.assertEqual(page.evaluate('''async url=>{const img=new Image();img.src=url;await img.decode();return [img.naturalWidth,img.naturalHeight]}''', self.url + 'assets/cooper-share.png'), [1200,630])
 

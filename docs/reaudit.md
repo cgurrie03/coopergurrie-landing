@@ -30,3 +30,7 @@ Reviewed against the [Web Interface Guidelines](https://raw.githubusercontent.co
 The linked basketball application and captured screenshot still use their own existing “College Basketball Research” identity. Its separate owner must change that application title if the rename should extend beyond this portfolio. Historical comparisons and model limitations remain disclosed; the portfolio makes no new claim of live recommendations or proven betting returns.
 
 Native browser-menu zoom, screen-reader speech output, Safari and Android Chrome were not tested. No unresolved blocking portfolio issue was found within this audit's scope.
+
+## Subsequent owner edits
+
+Project screenshots and their assets were removed at the owner’s request; earlier screenshot-specific checks are historical. No generated replacement illustration is used. The social preview remains. Both disabled buttons now say “In Development,” “upcoming” is removed from the NBA description, and the biography disclosure follows the contact row. Seven browser checks pass after these edits.

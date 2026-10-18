@@ -67,7 +67,6 @@ main{scroll-margin-top:20px}main:focus{outline:2px solid var(--blue);outline-off
 a:focus-visible{outline:2px solid white;outline-offset:5px;border-radius:3px}
 .project{scroll-margin-top:24px}.status{line-height:1.6}
 .secondary-link{display:flex;align-items:center;justify-content:center;min-height:44px;margin-top:4px;color:var(--accent);font-size:14px;text-underline-offset:4px}
-.project figure{margin:18px 0}.project img{display:block;width:100%;height:auto;border:1px solid #56617e;border-radius:10px}.project figcaption{font-size:12px;line-height:1.6;margin-top:8px;color:var(--muted)}
 .case-link{color:var(--blue);text-underline-offset:4px}.case-copy{margin-top:16px}.case-copy dt{color:var(--text);font-weight:700;margin-top:14px}.case-copy dd{margin:5px 0 0}
 @media(max-width:1000px){.page{padding:28px 30px}.projects{gap:22px}.project{padding:26px;height:auto;min-height:370px}.project h2{font-size:25px}.description{font-size:15px}h1{letter-spacing:-2px}}
 @media(max-width:740px){.page{padding:24px 20px}h1{font-size:clamp(38px,10vw,68px);letter-spacing:-1.5px;margin:12px 0}.intro p{font-size:16px;max-width:420px}.projects{grid-template-columns:1fr;gap:22px;margin:30px auto;max-width:520px}.project{height:auto;min-height:360px;padding:24px;border-radius:24px}.project h2{font-size:25px}.description{max-width:none;font-size:15px}footer{font-size:11px;flex-wrap:wrap}}
@@ -99,6 +98,7 @@ a:focus-visible{outline:2px solid white;outline-offset:5px;border-radius:3px}
 <a class="contact-link" href="https://www.linkedin.com/in/coopergurrie/" aria-label="Cooper Gurrie on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6ZM8 19H5V9h3v10ZM6.5 7.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4ZM19 19h-3v-5.3c0-1.3-.5-2.1-1.6-2.1-1.2 0-1.9.8-1.9 2.1V19h-3V9h2.9v1.4c.5-.8 1.5-1.7 3-1.7 2.5 0 3.6 1.5 3.6 4.4V19Z"/></svg><span>LinkedIn</span></a>
 <a class="contact-link" href="mailto:cooper.gurrie@gmail.com" aria-label="Email Cooper Gurrie"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg><span>Email</span></a>
 </nav>
+<details class="about personal"><summary>A little about me</summary><p>Family, friends, and sports are a big part of my life. I love watching, playing, and talking about sports, and turning data that might otherwise sit in a spreadsheet into something people can interact with and enjoy.</p><p>I started these projects to see how far curiosity, passion, and perseverance could take me. Building something I can call my own is rewarding. Sharing it with others is the best part. The topics may change, but making data enjoyable and useful will always be the focus.</p></details>
 </header>
 <main id="projects" tabindex="-1" aria-label="Projects">
 <div class="projects">
@@ -108,7 +108,6 @@ a:focus-visible{outline:2px solid white;outline-offset:5px;border-radius:3px}
 
 <div class="bottom"><p class="status">Play money · Approved league access</p><a class="button live" href="https://sportsbook.coopergurrie.com">Enter the Sportsbook</a></div>
 <details class="about"><summary aria-label="About Fantasy Sportsbook">About this project</summary><a class="secondary-link" href="https://sportsbook.coopergurrie.com/#/demo">Try the public demo</a>
-<figure><img src="assets/sportsbook-demo.webp" width="1280" height="900" loading="lazy" alt="Fantasy Sportsbook demo showing fictional league matchups, play-money lines, and a notice that betting is disabled."><figcaption>The public, read-only demo uses fictional teams, scores, balances, and tickets.</figcaption></figure>
 <dl class="case-copy"><dt>The problem &amp; audience</dt><dd>I wanted to give my dynasty league another way to compete and spend time together beyond the fantasy standings.</dd>
 <dt>What I built</dt><dd>A sportsbook experience for matchup bets, player performances, season futures, ticket history, and league standings.</dd>
 <dt>A design decision</dt><dd>Use play money so participation does not require risking real money. Keep the public demo separate from private league access.</dd>
@@ -122,7 +121,6 @@ a:focus-visible{outline:2px solid white;outline-offset:5px;border-radius:3px}
 
 <div class="bottom"><p class="status">Public preview</p><a class="button live" href="https://cbb.coopergurrie.com">Open the NCAAB Model</a></div>
 <details class="about"><summary aria-label="About NCAAB Betting Model">About this project</summary><a class="secondary-link" href="https://cbb.coopergurrie.com/#performance">Explore historical winner performance</a>
-<figure><img src="assets/basketball-research.webp" width="1280" height="900" loading="lazy" alt="NCAAB Betting Model showing historical spread comparisons, hypothetical returns, uncertainty, and a model-not-promoted notice."><figcaption>Historical model comparisons. Hypothetical results do not establish a betting advantage.</figcaption></figure>
 <dl class="case-copy"><dt>The problem &amp; audience</dt><dd>Basketball fans exploring models need to see what was evaluated and what the evidence can actually support.</dd>
 <dt>What I am building</dt><dd>A place to explore Division I data, historical model comparisons, recorded prices, and evaluation methods.</dd>
 <dt>A design decision</dt><dd>Separate winner predictions from spread-cover predictions, and show uncertainty and source limitations alongside results.</dd>
@@ -133,15 +131,15 @@ a:focus-visible{outline:2px solid white;outline-offset:5px;border-radius:3px}
 <article id="ocho" class="project purple pending" aria-labelledby="ocho-title">
 <h2 id="ocho-title">The Ocho</h2>
 <p class="description">Up next. Project details will be shared as development begins.</p>
-<div class="bottom"><p class="status">Upcoming project</p><button class="button" disabled>In development</button></div>
+<div class="bottom"><p class="status">Upcoming project</p><button class="button" disabled>In Development</button></div>
 </article>
 <article id="nba" class="project red pending" aria-labelledby="nba-title">
 <h2 id="nba-title">NBA Model</h2>
-<p class="description">An upcoming NBA betting model focused on spreads and historical model evaluation.</p>
-<div class="bottom"><p class="status">Upcoming project</p><button class="button" disabled>In development</button></div>
+<p class="description">An NBA betting model focused on spreads and historical model evaluation.</p>
+<div class="bottom"><p class="status">Upcoming project</p><button class="button" disabled>In Development</button></div>
 </article>
 </div>
-<details class="about personal"><summary>A little about me</summary><p>Family, friends, and sports are a big part of my life. I love watching, playing, and talking about sports, and turning data that might otherwise sit in a spreadsheet into something people can interact with and enjoy.</p><p>I started these projects to see how far curiosity, passion, and perseverance could take me. Building something I can call my own is rewarding. Sharing it with others is the best part. The topics may change, but making data enjoyable and useful will always be the focus.</p></details>
+
 </main>
 <footer><p>coopergurrie.com</p><p>More projects as they take shape.</p></footer>
 </div>
